@@ -1,0 +1,55 @@
+
+<body>
+    <div class="container-fluid" id="main-back">
+        <div class="container container-result row">
+            <% @players.each do |p| %>           
+                <div class="col-md-2">
+                    <%= image_tag p.avatar, height: '100%', width: '100%', :class => "img-circle avatar-back"%>
+                    <div class="thumbnail">
+                        <div class="caption text-center text-uppercase">
+                            <strong><%= p.name %><br>Flags: <%= p.no_flag %>/10<br>Score: <%= p.points %></strong>
+                        </div>
+                    </div>
+                    <div class="thumbnail text-center countdown-wrapper text-uppercase">        
+                        <strong>Time Bomb</strong>
+                        <script type="application/javascript">
+                                var myCountdown2 = new Countdown({
+                                        time: <%= p.timer - (Time.now - p.created_at) %>, 
+                                        width:135, 
+                                        height:50, 
+                                        style:"flip",
+                                        rangeHi:"hour",	
+                                        onComplete	: countdownComplete // <- no comma on last item!
+                                        });
+                                function countdownComplete(){
+	                                   $(".thumbnail").css("background-color", "red");
+                                       $(".avatar-back").css("background-color", "red");
+                                       $(".avatar-back").css("opacity", "0.2");
+                                        }
+
+                        </script> 
+                        <script type="text/javascript">
+                            //functions here
+                            //check for browser support
+                            if(typeof(EventSource)!=="undefined") {
+                                //create an object, passing it the name and location of the server side script
+                                var eSource = new EventSource("/create");
+  
+                                eSource.addEventListener("hacker1", function(event) {
+                                    //write the received data to the page
+                                    alert(event.data);
+                                }, false);        
+
+                                    }
+
+                                    else {
+                                        document.getElementById("serverData").innerHTML="Whoops! Your browser doesn't receive server-sent events.";
+                                    }      
+                        </script>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+  </body>
+

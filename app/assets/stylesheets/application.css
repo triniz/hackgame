@@ -1,0 +1,179 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*Colors*/
+
+/* For test purpose */
+.color1 {
+background-color : darkgray;
+}
+
+.color2 {
+background-color : darkcyan;
+}
+
+body, html {   
+    height :100%;
+    width : 100%;
+    padding : 0;
+    margin : 0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.container-fluid {
+    padding : 0;
+    margin : 0;
+}
+
+/*Header --Begin*/
+
+.navbar {
+    border : hidden;
+    background-color: transparent;
+    margin-bottom: 120px;
+}
+
+/*Navbar menu blue color*/
+.navbar .nav > li > a{  
+    color: white;
+    font-weight: lighter;
+    text-shadow: 0;
+}
+
+/* selected link */
+.navbar .nav > li > a:hover{
+    color: #cc0000;
+    font-weight: bolder;
+    background-color: transparent;
+    text-shadow: 0;
+    }
+
+/*-----------*/
+
+#main-back { 
+    height: 200%;
+    width: 100%;
+    padding-top: 50px;
+    background-image : url(background/back4.jpg);
+    background-repeat: repeat;
+}
+
+
+#result-back {
+    position : relative;
+    margin : 0 auto;
+}
+
+.thumbnail {
+    margin-top: 10px;
+    background-color: #EAEAEA; 
+    height: 90px;
+}
+
+.caption strong {
+    font-size: 16px;
+}
+
+.avatar-back {
+    background-color: #EAEAEA;
+}
+
+.countdown-wrapper {
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.container-result {
+    margin: 0 auto;
+}
+
+/*
+.row {
+    border-bottom-style: solid;
+    border-bottom-color: #EAEAEA;
+    border-bottom-width:thin;
+}
+*/
+
+/*SIGNUP/LOGIN/FLAG PAGE*/
+
+#main-back-flags {
+    height: 100%;
+    width: 100%;
+    background-image : url(background/back2.jpg);
+    background-attachment : fixed;
+    background-size : cover;
+}
+
+
+.form-control {
+    height: 45px;
+}
+
+.form-wrapper {
+    background-color: #0a1d26;
+    padding: 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.alert, .notice {
+    font-weight: bold;
+}
+
+.btn-send {
+    background-color: #cc0000;
+    color: white;
+    margin-top: 10px;
+    height: 45px;
+    font-size: 1.4em;
+}
+
+.btn-send:hover {
+    background-color: #ff3232;
+    color: white;
+}
+
+.avatar-back-login {
+    background-color:white;
+    margin-bottom: 30px;
+    margin-left: 140px;
+}
+
+.form-title {
+    color: white;
+    font-size: 2.6em;
+}
+
+.form-text {
+    color: white;
+    font-size: 1.2em;
+}
+
+.navbar-brand {
+    color: #4B527C;
+    text-shadow: 0;
+    background-color: white;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.image_picker_image {
+    max-width: 140px;
+    max-height: 100px;
+    background-color: #FF0000;
+}

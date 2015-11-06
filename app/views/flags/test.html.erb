@@ -1,0 +1,60 @@
+ipadfjpiadj
+
+<!--
+<ul id="users">
+</ul>
+
+#<%= content_for :javascript do %>
+  <script type="text/javascript">
+    var source = new EventSource('/user_stream');
+    source.addEventListener('results', function(e){
+      console.log('Received a message:', e.data);
+      $("#users").append("<li>"+ $.parseJSON(e.data).name +"</li>");
+    });
+    source.addEventListener('finished', function(e){
+      console.log('Close:', e.data);
+      source.close();
+    });
+</script>
+#<% end %>
+-->
+<html>
+<div id="serverData">
+  
+</div>
+    
+<div id="serverData2">
+  
+</div>
+
+</html>
+
+<!--
+  <script type="text/javascript">
+        //functions here
+        //check for browser support
+        if(typeof(EventSource)!=="undefined") {
+            //create an object, passing it the name and location of the server side script
+            var eSource = new EventSource("/create");
+            //detect message receipt
+//            eSource.addEventListener("hacker1", function(event) {
+//                //write the received data to the page
+//                document.getElementById("serverData").innerHTML = event.data;
+//            }, false); 
+//            
+//            eSource.addEventListener("hacker2", function(event) {
+//                //write the received data to the page
+//                document.getElementById("serverData2").innerHTML = event.data;
+//            }, false); 
+            
+            //Reload webpage
+            eSource.addEventListener("refresh", function(event) {
+                //write the received data to the page
+                window.location.reload();
+            }, false);        
+        }
+
+        else {
+            document.getElementById("serverData").innerHTML="Whoops! Your browser doesn't receive server-sent events.";
+        }      
+  </script>-->

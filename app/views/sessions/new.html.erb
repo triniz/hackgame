@@ -1,0 +1,60 @@
+<body>
+    
+    <div class="container-fluid" id="main-back-flags">
+<!-- Header Menu -->
+        <nav class="navbar color1">
+            <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                <% if current_player %> 
+                    <a class="navbar-brand" href="#">Hi <%= current_player.name %> !</a>
+                    <ul class="nav navbar-nav pull-right">
+                        <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+                    </ul>
+                <% else %>
+                    <ul class="nav navbar-nav pull-right">
+                        <li><%= link_to "Login", 'login' %></a></li> 
+                        <li><%= link_to "Signup", 'signup' %></a></li> 
+                    </ul>
+                <% end %>
+                </div> 
+            </div>
+        </nav> 
+
+<!--Form to create account-->
+
+       
+            <div class="row"> 
+                <div class="col-md-4 col-sm-4 col-md-offset-4 col-sm-offset-4 form-wrapper">
+                    <p class="text-center form-title">Log in </p> 
+                    <%= form_for :session, url: login_path, :html => {:class => "form-horizontal center"} do |f| %>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <%= f.email_field :email,  :placeholder => "Email", class: 'form-control' %> 
+                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <%= f.password_field :password, :placeholder => "Password", class: 'form-control' %> 
+                                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <%= f.submit "Log in", class: "btn btn-send btn-block" %>
+                        </div>
+                        <div class="form-group">
+                            <p>New user? <%= link_to "Sign up now !", signup_path %></p>
+                        </div>
+                   <% end %>   
+                </div>
+            </div>
+    </div>
+</body>
