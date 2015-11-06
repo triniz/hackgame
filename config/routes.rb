@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   
- root 'players#index'
+# root 'players#index'
 # root 'messaging#index'
 # root to: 'flags#test'
 # get  'user_stream' => 'flags#index_stream'
 # get 'test' => 'messaging#send_message'
 # get 'reception'
-
+   
+  root 'players#new'
  
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
